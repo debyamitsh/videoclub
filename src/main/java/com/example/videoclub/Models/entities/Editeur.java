@@ -4,10 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Editeur {
+public class Editeur implements Serializable {
     private Integer id;
     private String nom;
     private String adress;

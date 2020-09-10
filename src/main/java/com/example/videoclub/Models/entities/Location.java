@@ -4,16 +4,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-public class Location {
+public class Location implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Date dateLocation;
     private String codeLocation;
     private Date dateRetourn;
+    //private ArrayList<Cassette> cassetteList;
+
 
     public Integer getId() {
         return id;

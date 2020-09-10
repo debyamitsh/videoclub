@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Vente {
@@ -13,6 +14,7 @@ public class Vente {
     private Integer id;
     private Date date;
     private String code;
+    //private List<Cassette> cassetteList;
 
     public int getId() {
         return id;

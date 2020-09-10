@@ -1,18 +1,18 @@
 package com.example.videoclub.Models.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Client {
+@Table
+public class Client implements Serializable {
     private String nom;
     private String prenom;
     private String phone;
     private String address;
     private Integer id;
 
+    @Column
     public String getNom() {
         return nom;
     }
@@ -21,6 +21,7 @@ public class Client {
         this.nom = nom;
     }
 
+    @Column
     public String getPrenom() {
         return prenom;
     }
@@ -29,6 +30,7 @@ public class Client {
         this.prenom = prenom;
     }
 
+    @Column
     public String getPhone() {
         return phone;
     }
@@ -37,6 +39,7 @@ public class Client {
         this.phone = phone;
     }
 
+    @Column
     public String getAddress() {
         return address;
     }
@@ -51,6 +54,7 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
     public Integer getId() {
         return id;
     }

@@ -1,13 +1,11 @@
 package com.example.videoclub.Models.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Adherent implements Serializable {
+@Inheritance
+public class Adherent extends Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

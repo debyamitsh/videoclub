@@ -7,8 +7,18 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
-public class NonAbonnee implements Serializable {
+public class NonAbonnee extends Adherent {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
-public class Abonne implements Serializable {
+public class Abonne extends Adherent {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

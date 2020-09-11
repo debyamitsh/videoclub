@@ -1,9 +1,6 @@
 package com.example.videoclub.Models.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,6 +11,8 @@ public class DemandeAdhesion implements Serializable {
     private Integer id;
     private Date dateDemande;
     private String codeDemande;
+    @OneToOne
+    private NonAdherent nonAdherent;
 
     public Integer getId() {
         return id;
@@ -37,5 +36,13 @@ public class DemandeAdhesion implements Serializable {
 
     public void setCodeDemande(String codeDemande) {
         this.codeDemande = codeDemande;
+    }
+
+    public NonAdherent getNonAdherent() {
+        return nonAdherent;
+    }
+
+    public void setNonAdherent(NonAdherent nonAdherent) {
+        this.nonAdherent = nonAdherent;
     }
 }

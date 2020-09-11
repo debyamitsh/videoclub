@@ -5,10 +5,11 @@ import java.io.Serializable;
 
 @Entity
 public class Cassette implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String nom;
     private String numero;
-    private Location location;
 
 
     public String getNom() {
@@ -31,19 +32,9 @@ public class Cassette implements Serializable {
         this.id = id;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     public Integer getId() {
         return id;
     }
 
-    //@ManyToOne(fetch = FetchType.LAZY)
-    //@JoinColumn()
-    public Location getLocation(Location location) {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
 }

@@ -4,15 +4,16 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Client implements Serializable {
     private String nom;
     private String prenom;
     private String phone;
     private String address;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column
     public String getNom() {
         return nom;
     }
@@ -21,7 +22,7 @@ public class Client implements Serializable {
         this.nom = nom;
     }
 
-    @Column
+
     public String getPrenom() {
         return prenom;
     }
@@ -30,7 +31,7 @@ public class Client implements Serializable {
         this.prenom = prenom;
     }
 
-    @Column
+
     public String getPhone() {
         return phone;
     }
@@ -39,7 +40,7 @@ public class Client implements Serializable {
         this.phone = phone;
     }
 
-    @Column
+
     public String getAddress() {
         return address;
     }
@@ -52,9 +53,6 @@ public class Client implements Serializable {
         this.id = id;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
     public Integer getId() {
         return id;
     }

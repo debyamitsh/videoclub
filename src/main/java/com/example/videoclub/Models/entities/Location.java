@@ -1,13 +1,10 @@
 package com.example.videoclub.Models.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 
 @Entity
 public class Location implements Serializable {
@@ -17,7 +14,10 @@ public class Location implements Serializable {
     private Date dateLocation;
     private String codeLocation;
     private Date dateRetourn;
-    //private ArrayList<Cassette> cassetteList;
+    @OneToOne
+    private Adherent adherent;
+    @OneToMany
+    private List<Cassette> cassetteList;
 
 
     public Integer getId() {
@@ -50,5 +50,21 @@ public class Location implements Serializable {
 
     public void setDateRetourn(Date dateRetourn) {
         this.dateRetourn = dateRetourn;
+    }
+
+    public List<Cassette> getCassetteList() {
+        return cassetteList;
+    }
+
+    public void setCassetteList(List<Cassette> cassetteList) {
+        this.cassetteList = cassetteList;
+    }
+
+    public Adherent getAdherent() {
+        return adherent;
+    }
+
+    public void setAdherent(Adherent adherent) {
+        this.adherent = adherent;
     }
 }

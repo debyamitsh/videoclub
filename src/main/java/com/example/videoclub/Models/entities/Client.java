@@ -14,6 +14,16 @@ public class Client implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    public Client () {}
+
+    public Client(String nom, String prenom, String phone, String address, Integer id) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.phone = phone;
+        this.address = address;
+        this.id = id;
+    }
+
     public String getNom() {
         return nom;
     }

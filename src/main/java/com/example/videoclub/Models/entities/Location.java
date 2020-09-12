@@ -19,6 +19,7 @@ public class Location implements Serializable {
     @OneToMany
     private List<Cassette> cassetteList;
 
+    public Location() {}
 
     public Integer getId() {
         return id;

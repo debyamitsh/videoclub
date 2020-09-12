@@ -14,6 +14,8 @@ public class DemandeAdhesion implements Serializable {
     @OneToOne
     private NonAdherent nonAdherent;
 
+    public DemandeAdhesion() {}
+
     public Integer getId() {
         return id;
     }

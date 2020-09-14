@@ -1,5 +1,4 @@
 package com.example.videoclub.Models.entities;
-
 import javax.persistence.*;
 import java.io.Serializable;
 

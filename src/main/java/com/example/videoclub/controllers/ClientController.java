@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(path="/client")
+@RequestMapping(path="/client", value = "/clien/add", method = RequestMethod.POST)
 public class ClientController {
 
     @Autowired
